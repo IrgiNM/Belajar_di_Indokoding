@@ -42,6 +42,15 @@ export default function ExampleConditional() {
             {isLoggedIn ? "ubah jadi false" : "ubah jadi true"}
           </button>
         </div>
+
+        <button
+          className="bg-blue-500 p-3 text-white rounded-2xl"
+          onClick={() => {
+            window.location.href = "/ExampleIfElse";
+          }}
+        >
+          lanjut ke penjelasan if else
+        </button>
       </div>
     </>
   );

@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function UseStateExample() {
+export default function ExampleUseState() {
   // contoh penggunaan useState dengan tipe data number
   const [number, setNumber] = useState(0);
   // gunakan setNumber untuk mengubah nilai number
