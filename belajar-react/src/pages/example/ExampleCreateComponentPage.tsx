@@ -20,7 +20,7 @@ export default function ExamplePage() {
           <button
             className="bg-green-500 p-3 text-white"
             onClick={() => {
-              navigate("/UseStateExample");
+              navigate("/ExampleUseState");
             }}
           >
             lanjut ke penjelasan useState
