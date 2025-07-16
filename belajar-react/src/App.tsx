@@ -8,7 +8,7 @@ import ExampleIfElse from "./pages/example/ExampleIfElse";
 import ExampleUseState from "./pages/example/ExampleUseState";
 import ExampleMapping from "./pages/example/ExampleMapping";
 import ExampleFetchData from "./pages/example/ExampleFetchData";
-
+import IrgiPage from "./pages/IrgiPage";
 
 function App() {
   return (
@@ -23,6 +23,9 @@ function App() {
           <Route path="/ExampleMapping" element={<ExampleMapping />} />
           <Route path="/ExampleFetchData" element={<ExampleFetchData />} />
           <Route path="/dinar" element={<DinarPage />} />
+          <Route path="/irgi" element={<IrgiPage />} />
+          {/* <Route path="/tantri" element={<TantriPage />} />
+          <Route path="/zahra" element={<ZahraPage />} /> */}
         </Route>
       </Routes>
     </>
