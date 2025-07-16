@@ -31,13 +31,17 @@ export default function ExamplePage() {
       title: "Contoh Mapping",
       link: "/ExampleMapping",
     },
+    {
+      title: "Contoh Fetch Data",
+      link: "/ExampleFetchData",
+    },
   ];
 
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen gap-3">
         <h1 className="text-3xl text-red-500">Contoh Page</h1>
-        <p>This is an example page</p>
+        <p>This is an example page with React Router</p>
 
         <div className="flex flex-col items-center justify-center gap-3">
           {ListPage.map((item, index) => (
