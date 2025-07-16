@@ -14,6 +14,7 @@ export default function ExampleMapping() {
       image:
         "https://images.pexels.com/photos/1342529/pexels-photo-1342529.jpeg",
       sold: 1300,
+      isSoldOut: false,
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ export default function ExampleMapping() {
       image:
         "https://images.pexels.com/photos/1342529/pexels-photo-1342529.jpeg",
       sold: 700,
+      isSoldOut: true,
     },
     {
       id: 3,
@@ -30,6 +32,16 @@ export default function ExampleMapping() {
       image:
         "https://images.pexels.com/photos/1342529/pexels-photo-1342529.jpeg",
       sold: 890,
+      isSoldOut: true,
+    },
+    {
+      id: 4,
+      name: "Jam Tangan biasa",
+      price: 120000,
+      image:
+        "https://images.pexels.com/photos/1342529/pexels-photo-1342529.jpeg",
+      sold: 890,
+      isSoldOut: false,
     },
   ];
 
@@ -75,6 +87,7 @@ export default function ExampleMapping() {
                 price={product.price}
                 image={product.image}
                 sold={product.sold}
+                isSoldOut={product.isSoldOut}
               />
             </>
           ))}

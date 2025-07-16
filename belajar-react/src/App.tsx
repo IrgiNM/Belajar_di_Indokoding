@@ -7,6 +7,7 @@ import ExampleConditional from "./pages/example/ExampleConditional";
 import ExampleIfElse from "./pages/example/ExampleIfElse";
 import ExampleUseState from "./pages/example/ExampleUseState";
 import ExampleMapping from "./pages/example/ExampleMapping";
+import IrgiPage from "./pages/IrgiPage";
 
 function App() {
   return (
