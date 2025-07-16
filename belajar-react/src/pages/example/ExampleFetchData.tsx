@@ -14,7 +14,8 @@ export default function ExampleFetchData() {
     setLoading(true); // Set loading state to true before fetching data
     try {
       const response = await api.get("/products");
-      console.log(response.data); // ✅ ini adalah data produk
+      console.log("response 1",response); // ✅ ini adalah data produk
+      console.log("response masuk ke data",response.data); // ✅ ini adalah data produk
       setData(response.data); // Simpan data ke state
     } catch (error) {
       console.error("Gagal mengambil data:", error);
