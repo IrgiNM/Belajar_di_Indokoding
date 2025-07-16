@@ -2,27 +2,27 @@ import React from 'react'
 
 export default function TantriPage() {
   return (
-    <nav className="bg-blue-600 p-4 shadow-md">
+    <nav className="">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-xl font-bold">TantriApp</h1>
-        <ul className="flex gap-4">
+        {/* <h1 className="text-black text-xl font-bold">TantriApp</h1>  */}
+        <ul className="flex gap-10">
           <li>
-            <Link to="/" className="text-white hover:underline">Home</Link>
+            <a href="/" className="text-purple-900 hvover:bg-blue-100 px-2 py-1 rounded-4xl hover:font-bold  ">Home</a>
           </li>
           <li>
-            <Link to="/Our Work" className="text-white hover:underline">Our Work</Link>
+            <a href="/Our Work" className="text-emerald-700 hover:bg-blue-100 px-2 py-1 rounded-4xl hover:font-bold">Our Work</a>
           </li>
           <li>
-            <Link to="/About Us" className="text-white hover:underline">About Us</Link>
+            <a href="/About Us" className="text-cyan-900 hover:bg-blue-100 px-2 py-1 rounded-4xl hover:font-bold">About Us</a>
           </li>
           <li>
-            <Link to="/Contact" className="text-white hover:underline">Contact</Link>
+            <a href="/Contact" className="text-amber-900 hover:bg-blue-100 px-2 py-1 rounded-4xl  hover:font-bold">Contact</a>
           </li>
           <li>
-            <Link to="/Careers" className="text-white hover:underline">Careers</Link>
+            <a href="/Careers" className="text-cyan-900 hover:bg-blue-100 px-2 py-1 rounded-4xl  hover:font-bold">Careers</a>
           </li>
           <li>
-            <Link to="/Book Online" className="text-white hover:underline">Book Online</Link>
+            <a href="/Book Online" className="text-purple-900 hover:bg-blue-100 px-2 py-1 rounded-4xl  hover:font-bold">Book Online</a>
           </li>
         </ul>
       </div>
