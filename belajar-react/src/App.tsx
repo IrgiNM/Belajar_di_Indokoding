@@ -6,6 +6,7 @@ import ExampleUseEffect from "./pages/example/ExampleUseEffect";
 import ExampleConditional from "./pages/example/ExampleConditional";
 import ExampleIfElse from "./pages/example/ExampleIfElse";
 import ExampleUseState from "./pages/example/ExampleUseState";
+import ExampleMapping from "./pages/example/ExampleMapping";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/ExampleUseEffect" element={<ExampleUseEffect />} />
           <Route path="/ExampleConditional" element={<ExampleConditional />} />
           <Route path="/ExampleIfElse" element={<ExampleIfElse />} />
-          <Route path="/ExampleIfElse" element={<ExampleIfElse />} />
+          <Route path="/ExampleMapping" element={<ExampleMapping />} />
           <Route path="/dinar" element={<DinarPage />} />
         </Route>
       </Routes>
