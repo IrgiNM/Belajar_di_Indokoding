@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import DinarPage from "./pages/DinarPage";
+import TantriPage from "./pages/TantriPage";
 import ExamplePage from "./pages/example/ExampleCreateComponentPage";
 import { MainLayout } from "./components/layout/MainLayout";
 import ExampleUseEffect from "./pages/example/ExampleUseEffect";
@@ -18,7 +18,7 @@ function App() {
           <Route path="/ExampleConditional" element={<ExampleConditional />} />
           <Route path="/ExampleIfElse" element={<ExampleIfElse />} />
           <Route path="/ExampleIfElse" element={<ExampleIfElse />} />
-          <Route path="/dinar" element={<DinarPage />} />
+          <Route path="/tantri" element={<TantriPage />} />
         </Route>
       </Routes>
     </>
