@@ -89,6 +89,7 @@ export default function IrgiPage() {
 
         <div className='w-full flex items-center justify-center'>
             <img className='h-[150px]' src={gambar} alt="gambar" />
+            <p>adad</p>
         </div>
     </div>
     </>
