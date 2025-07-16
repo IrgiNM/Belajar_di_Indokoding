@@ -31,6 +31,10 @@ export default function ExamplePage() {
       title: "Contoh Mapping",
       link: "/ExampleMapping",
     },
+    {
+      title: "Contoh Fetch Data",
+      link: "/ExampleFetchData",
+    },
   ];
 
   return (
