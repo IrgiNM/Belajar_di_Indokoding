@@ -3,6 +3,9 @@ import type { ProductProps } from "../../type";
 import ProductCard, { ProductCard2 } from "../../components/ProductCard";
 
 export default function ExampleMapping() {
+  // contoh bentukan data yang akan di dapat ketika request ke API
+  // ini hanya contoh, biasanya data ini di dapat dari API
+  // seperti ini contoh data seperti yg ada di e-commerce
   const productList: ProductProps[] = [
     {
       id: 1,
@@ -32,7 +35,7 @@ export default function ExampleMapping() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-3">
-      <h1 className="text-3xl text-blue-500">Cara mapping data array</h1>
+      <h1 className="text-3xl font-bold">Cara mapping data array</h1>
 
       {/* Cara Pertama */}
       <div className="mt-10">
