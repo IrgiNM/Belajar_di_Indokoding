@@ -6,6 +6,7 @@ import ExampleUseEffect from "./pages/example/ExampleUseEffect";
 import ExampleConditional from "./pages/example/ExampleConditional";
 import ExampleIfElse from "./pages/example/ExampleIfElse";
 import ExampleUseState from "./pages/example/ExampleUseState";
+import IrgiPage from "./pages/IrgiPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/ExampleIfElse" element={<ExampleIfElse />} />
           <Route path="/ExampleIfElse" element={<ExampleIfElse />} />
           <Route path="/dinar" element={<DinarPage />} />
+          <Route path="/irgi" element={<IrgiPage />} />
         </Route>
       </Routes>
     </>
