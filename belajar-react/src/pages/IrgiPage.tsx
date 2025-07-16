@@ -6,7 +6,7 @@ import postgre from '../assets/postgre.png'
 import pythonb from '../assets/pythonb.png'
 import pythonk from '../assets/pythonk.png'
 import consule from '../assets/consule.png'
-import type { TombolIrgi } from '../type'
+import type { TombolIrgi } from '../typeIrgi'
 
 export default function IrgiPage() {
     const [bg, setBg] = useState("Home");

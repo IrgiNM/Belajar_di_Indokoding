@@ -23,9 +23,3 @@ export interface ProductStore {
 export interface ProductCardProps {
   data: ProductProps;
 }
-
-export type TombolIrgi = {
-  label: string;
-  warna: string;
-  hover: string;
-}
