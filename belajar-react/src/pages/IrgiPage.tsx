@@ -77,12 +77,6 @@ export default function IrgiPage() {
             {tombolList.map((tombol) => (
                 <PrimaryButton style={`${tombol.warna} ${style} ${bg === tombol.label ? `${tombol.hover} font-bold` : ''}`} label={tombol.label} onClick={() => setBg(tombol.label)}/>
             ))}
-            {/* <PrimaryButton style={`text-[#4F006C] ${style} ${bg === "Home" && "bg-[#F0D4FF] font-bold"}`} label='Home' onClick={() => setBg("Home")}/>
-            <PrimaryButton style={`text-[#128900] ${style} ${bg === "Our Work" && "bg-[#D4FFDB]  font-bold"}`} label='Our Work' onClick={() => setBg("Our Work")}/>
-            <PrimaryButton style={`text-[#004C6C] ${style} ${bg === "About Us" && "font-bold bg-[#D4F6FF] "}`} label='About Us' onClick={() => setBg("About Us")}/>
-            <PrimaryButton style={`text-[#6C4E00] ${style} ${bg === "Contact" && "font-bold bg-[#FEFFD4] "}`} label='Contact' onClick={() => setBg("Contact")}/>
-            <PrimaryButton style={`text-[#004C6C] ${style} ${bg === "Career" && "font-bold bg-[#D4F6FF] "}`} label='Career' onClick={() => setBg("Career")}/>
-            <PrimaryButton style={`text-[#4F006C] ${style} ${bg === "Book Online" && "font-bold bg-[#F0D4FF] "}`} label='Book Online' onClick={() => setBg("Book Online")}/> */}
         </div>
 
         <div className='h-[100px] bg-red-600'></div>

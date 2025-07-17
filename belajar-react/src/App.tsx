@@ -12,6 +12,7 @@ import ExampleMapping from "./pages/example/ExampleMapping";
 import ExampleFetchData from "./pages/example/ExampleFetchData";
 import IrgiPage from "./pages/IrgiPage";
 import DinarPage from "./pages/DinarPage";
+import IrgiFetch from "./pages/irgi/irgiFetch";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/zahra" element={<ZahraPage />} />
           <Route path="/dinar" element={<DinarPage />} />
           <Route path="/irgi" element={<IrgiPage />} />
+          <Route path="/irgiFetch" element={<IrgiFetch />} />
           <Route path="/latih-kuda/:id" element={<LatihKuda />} /> 
 
         </Route>
