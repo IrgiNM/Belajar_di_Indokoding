@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react'
 import api from '../../libs/axios';
 import UserCard from './componentIrgi/UserCard';
 
+interface User {
+    id: number;
+    username: string;
+    email: string;
+}
+
 export default function IrgiFetch() {
     const [dataUser, setDataUser] = useState([]);
     const fetchUser = async () => {
@@ -21,7 +27,7 @@ export default function IrgiFetch() {
   return (
     <>
     <div className='flex flex-wrap gap-4'>
-        {dataUser.map((user: any) => (
+        {dataUser.map((user: User) => (
             <UserCard 
                 key={user.id} 
                 id={user.id} 
