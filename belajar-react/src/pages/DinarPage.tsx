@@ -1,111 +1,110 @@
-import React, { useState, useEffect } from "react";
+// install extension ES7 React/Redux/GraphQL/React-Native snippets di VSCode
+// extension ini menyediakan snippet untuk membuat komponen React dengan cepat
+// cara pemakaian: ketika pertama kali buka halaman, bisa langsung ketik rfc atau rfce dan enter
+
+// ini contoh menggunakan rfc
+import React, { useState } from "react";
+// import MappingKuda from "./MappingKuda";
 
 export default function DinarPage() {
-  // State untuk mengelola nama kuda, status pelatihan, dan kecepatan
-  const [horseName, setHorseName] = useState(""); // String: nama kuda
-  const [isTraining, setIsTraining] = useState(false); // Boolean: status pelatihan
-  const [speed, setSpeed] = useState(50); // Number: statistik kecepatan (0-100)
+ const kudaData = [
+    { id: 1, nama: "Gold Ship", gambar: "https://media.gametora.com/umamusume/characters/profile/1007.png", nomor: 89, status: "Resting", stamina: 100 },
+    { id: 2, nama: "Mejiro McQueen", gambar: "https://media.gametora.com/umamusume/characters/profile/1013.png", nomor: 99, status: "Resting", stamina: 100 },
+    { id: 3, nama: "Vodka", gambar: "https://media.gametora.com/umamusume/characters/profile/1008.png", nomor: 29, status: "Training", stamina: 80 },
+    { id: 4, nama: "Gold City", gambar: "https://media.gametora.com/umamusume/characters/profile/1040.png", nomor: 69, status: "Training", stamina: 90 },
+    { id: 5, nama: "Sweep Tosho", gambar: "https://media.gametora.com/umamusume/characters/profile/1044.png", nomor: 96, status: "Resting", stamina: 70 },
+    { id: 6, nama: "Yayoi Akikawa", gambar: "https://media.gametora.com/umamusume/characters/profile/9002.png", nomor: 12, status: "Training", stamina: 60 },
+    { id: 7, nama: "Daiwa Scarlet", gambar: "https://media.gametora.com/umamusume/characters/profile/1009.png", nomor: 1, status: "Resting", stamina: 50 },
+    { id: 8, nama: "Biwa Hayahide", gambar: "https://media.gametora.com/umamusume/characters/profile/1023.png", nomor: 10, status: "Training", stamina: 40 },
+    { id: 9, nama: "Little Cocon", gambar: "https://media.gametora.com/umamusume/characters/profile/2003.png", nomor: 37, status: "Resting", stamina: 30 },
+  ];
 
-  // useEffect: Log saat halaman dimuat
-  useEffect(() => {
-    console.log(`Dashboard untuk ${horseName} dimuat!`);
-  }, []);
+  const [selectedKuda, setSelectedKuda] = useState<Kuda | null>(null);
+  const [number, setNumber] = useState(0);
+  const [text, setText] = useState("Catatan Kuda");
 
-  // useEffect: Log saat horseName atau speed berubah
-  useEffect(() => {
-    console.log(`Nama kuda: ${horseName}, Kecepatan: ${speed}`);
-  }, [horseName, speed]);
-
-  // If-Else: Log berdasarkan kecepatan
-  if (speed <= 30) {
-    console.log(`${horseName} sedang sakit!`);
-  } else if (speed > 30) {
-    console.log(`${horseName} perlu lebih banyak latihan!`);
-  } else if (speed >= 40 && speed <= 70) {
-    console.log(`${horseName} dalam kondisi baik!`);
-  } else {
-    console.log(`${horseName} adalah pelari top!`);
+  interface Kuda {
+    id: number;
+    nama: string;
+    gambar: string;
+    nomor: number;
+    status: string;
+    stamina: number;
   }
 
-  // Fungsi untuk reset statistik
-  const handleReset = () => {
-    setHorseName("Special Week");
-    setSpeed(50);
-    setIsTraining(false);
-    console.log("Statistik kuda direset!");
+  const handleCardClick = (kuda: Kuda) => {
+    setSelectedKuda(kuda);
+  };
+  // Function to toggle status between 'Training' and 'Resting'
+  const toggleStatus = (kuda: Kuda) => {
+    const newStatus = kuda.status === "Resting" ? "Training" : "Resting";
+    setSelectedKuda({ ...kuda, status: newStatus });
   };
 
-  // Fungsi untuk boost kecepatan (contoh aksi tambahan)
-  const handleBoost = () => {
-    if (speed < 100) {
-      setSpeed(speed + 10);
-      console.log(`${horseName} mendapatkan boost kecepatan!`);
+  const handleNavigate = () => {
+    if (number === 0) {
+      console.log("Navigasi ke Rest Page");
+    } else if (number === 1) {
+      console.log("Navigasi ke Training Page");
+    } else {
+      console.log("Navigasi ke Dashboard");
     }
   };
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-center min-h-screen gap-4 bg-blue-100 p-6">
-        <h1 className="text-4xl font-bold text-indigo-600">Uma Musume Dashboard</h1>
-
-        {/* Bagian Conditional Rendering */}
-        <div className="flex flex-col items-center gap-3 border p-6 rounded-lg shadow-md bg-white">
-          <h2 className="text-2xl">
-            {isTraining ? `Melatih ${horseName}` : `${horseName} sedang istirahat`}
-          </h2>
-          <p className={isTraining ? "text-blue-500" : "text-gray-500"}>
-            Status: {isTraining ? "Sedang Latihan" : "Tidak Latihan"}
-          </p>
-          {speed > 50 && (
-            <p className="text-green-500 font-semibold">Badge: Pelari Berbakat!</p>
-          )}
-          <p>Kecepatan: {speed}/100</p>
-        </div>
-
-        {/* Bagian Input dan State */}
-        <div className="flex flex-col items-center gap-3 border p-13 rounded-lg shadow-md bg-white">
-          <p className="font-semibold text-lg">Kelola Kuda</p>
-          <input
-            className="border p-2 rounded w-64"
-            type="text"
-            placeholder="Masukkan nama kuda"
-            value={horseName}
-            onChange={(e) => setHorseName(e.target.value)}
-          />
-          <input
-            className="border p-2 rounded w-64"
-            type="number"
-            placeholder="Kecepatan (0-100)"
-            value={speed}
-            onChange={(e) => {
-              const value = Number(e.target.value);
-              if (value >= 0 && value <= 100) setSpeed(value); // Validasi rentang
-            }}
-          />
+    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-50 p-6">
+      <h1 className="text-4xl font-bold text-blue-600 mb-6">Umamusume Kuda Dashboard</h1>
+      
+      {selectedKuda && (
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-6 w-full max-w-2xl">
+          <h2 className="text-2xl font-semibold text-gray-800">{selectedKuda.nama}</h2>
+          <p className="text-lg text-gray-600">Nomor: {selectedKuda.nomor}</p>
+          <p className="text-lg text-green-600">Status: {selectedKuda.status}</p>
+          <p className={selectedKuda.stamina > 50 ? "text-lg text-yellow-600" : "text-lg text-red-600"}>Stamina: {selectedKuda.stamina}</p>
           <button
-            className="bg-indigo-500 text-white p-3 rounded-lg hover:bg-indigo-600"
-            onClick={() => setIsTraining(!isTraining)}
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            onClick={() => toggleStatus(selectedKuda)}
           >
-            {isTraining ? "Selesai Latihan" : "Mulai Latihan"}
+            {selectedKuda.status === "Resting" ? "Start Training" : "Rest Now"}
           </button>
+          <div className="mt-4">
+            <p className="text-lg">Catatan: {text}</p>
+            <input
+              className="border p-2 mt-2 w-full"
+              type="text"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
+          </div>
         </div>
+      )}
 
-        {/* Aksi (Gantikan Navigasi) */}
-        <div className="flex gap-4">
-          <button
-            className="bg-green-500 text-white p-3 rounded-lg hover:bg-green-600"
-            onClick={handleBoost}
-          >
-            Boost Kecepatan (+10)
-          </button>
-          <button
-            className="bg-purple-500 text-white p-3 rounded-lg hover:bg-purple-600"
-            onClick={handleReset}
-          >
-            Reset Statistik
-          </button>
-        </div>
+      <div className="flex flex-col items-center gap-4 mb-6">
+        {selectedKuda && (
+          <div>
+            <h3 className="text-xl">Number Control</h3>
+            <p className="text-lg">Number: {number}</p>
+            <p className={number > 5 ? "text-lg text-green-600" : "text-lg text-orange-600"}>Status Number: {number > 5 ? "High" : "Low"}</p>
+            <button className="bg-green-500 text-white px-4 py-2 rounded mr-2" onClick={() => setNumber(number + 1)}>Tambah</button>
+            <button className="bg-red-500 text-white px-4 py-2 rounded" disabled={number === 0} onClick={() => setNumber(0)}>Reset</button>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded ml-2" onClick={handleNavigate}>Navigate</button>
+          </div>
+        )}
       </div>
-    </>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+        {kudaData.map((kuda) => (
+          <div
+            key={kuda.id}
+            className="bg-white rounded-lg shadow-md p-4 cursor-pointer hover:shadow-lg transition"
+            onClick={() => handleCardClick(kuda)}
+          >
+            <img src={kuda.gambar} alt={kuda.nama} className="w-full h-40 object-cover rounded-md" />
+            <h3 className="text-lg font-medium mt-2">{kuda.nama}</h3>
+            <p className="text-sm text-gray-500">Nomor: {kuda.nomor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
