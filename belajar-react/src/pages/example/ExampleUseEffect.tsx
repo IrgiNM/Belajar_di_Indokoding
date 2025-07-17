@@ -6,7 +6,8 @@ export default function ExampleUseEffect() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log(`You clicked ${count} times`); // console.log akan muncul setiap kali nilai count ada perubahan
+    console.log(`You clicked ${count} times`);
+    // console.log akan muncul setiap kali nilai count ada perubahan
   }, [count]);
 
   // contoh ketika useEffect yg memiliki dependensi kosong
@@ -31,6 +32,13 @@ export default function ExampleUseEffect() {
           onClick={() => navigate("/ExampleConditional")}
         >
           lanjut ke penjelasan conditional
+        </button>
+
+        <button
+          className="bg-blue-500 p-3 text-white"
+          onClick={() => navigate("/irgi")}
+        >
+          navigate ke irgi
         </button>
       </div>
     </>
