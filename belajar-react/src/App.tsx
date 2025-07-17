@@ -1,10 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-<<<<<<< HEAD
-import DinarPage from "./pages/DinarPage";
 import LatihKuda from "./pages/LatihKuda";
-=======
 import TantriPage from "./pages/TantriPage";
->>>>>>> 8470a41d7d601e90ff9a5312f64c7367fef42f86
 import ExamplePage from "./pages/example/ExampleCreateComponentPage";
 import { MainLayout } from "./components/layout/MainLayout";
 import ExampleUseEffect from "./pages/example/ExampleUseEffect";
@@ -33,11 +29,9 @@ function App() {
           <Route path="/tantri" element={<TantriPage />} />
           <Route path="/zahra" element={<ZahraPage />} />
           <Route path="/dinar" element={<DinarPage />} />
-<<<<<<< HEAD
-          <Route path="/latih-kuda/:id" element={<LatihKuda />} /> {}
-=======
           <Route path="/irgi" element={<IrgiPage />} />
->>>>>>> 8470a41d7d601e90ff9a5312f64c7367fef42f86
+          <Route path="/latih-kuda/:id" element={<LatihKuda />} /> 
+
         </Route>
       </Routes>
     </>
