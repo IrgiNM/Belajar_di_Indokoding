@@ -94,6 +94,10 @@ export default function Service() {
         <button className={`rounded-full py-1 px-20 ${isDelivery ? "text-orange-500 bg-white" : "text-white bg-orange-500"}`} onClick={() => setIsDelivery(true)}>Delivery</button>
         <button className={`rounded-full py-1 px-20 ${isDelivery ? "text-white bg-orange-500" : "text-orange-500 bg-white"}`} onClick={() => setIsDelivery(false)}>Pick Up</button>
     </div>
+        <button onClick={() => setAktif("mobileApp")}>mobile app</button>
+        <button onClick={() => setAktif("webDev")}>web dev</button>
+        <button onClick={() => setAktif("troubleShoot")}>trouble shoot</button>
+        <button onClick={() => setAktif("")}>reset</button>
     </div>
     </>
   ) 
