@@ -31,7 +31,6 @@ export default function Service() {
 
     useEffect(() => {
 
-
         if (isAktif === "mobileApp") {
             console.log("Mobile App is active");
         } else if (isAktif === "webDev") {
@@ -43,11 +42,14 @@ export default function Service() {
             console.log("No service is active");
         }
 
-
         console.log("twst");
 
-        
     }, [isAktif]);
+
+    const [color, setColor] = useState("bg-red-200")
+
+    const [isDelivery, setIsDelivery] = useState(false)
+
 
   return (
     <>
@@ -58,6 +60,7 @@ export default function Service() {
             {services.map((service) => (
                 <>
                 {/* {service.line && (<div className='w-[1px] h-[230px] bg-blue-500'></div>)} */}
+                {service.id === 2 && <div className='w-0.5 h-[260px] bg-blue-300'></div>}
                 <div className={`${isAktif === "mobileApp" && service.id === 2 
                     ? "animate-spin" 
                     : isAktif === "webDev" && service.id === 1 
@@ -67,30 +70,44 @@ export default function Service() {
                     : ""} flex flex-col items-center justify-center gap-4 p-4`}>
                 <ServiceCard id={service.id} title={service.title} warna={service.warna} description={service.description} />
                 </div>
+                {service.id === 2 && <div className='w-0.5 h-[260px] bg-blue-300'></div>}
                 {/* {service.line && (<div className='w-[1px] h-[230px] bg-blue-500'></div>)} */}
                 </>
             ))}
         </div>
 
-    <button onClick={() => setAktif("mobileApp")}>mobile app</button>
+    <button className={`rounded-sm px-1 ${services[1].warna}`} onClick={() => setAktif("mobileApp")}>mobile app</button>
     <button onClick={() => setAktif("webDev")}>web dev</button>
     <button onClick={() => setAktif("troubleShoot")}>trouble shoot</button>
     <button onClick={() => setAktif("")}>reset</button>
+    
+
+    <div className={`mt-10 w-35 h-35 rounded-full ${color}`}></div>
+
+    <button className={`rounded-sm px-1 ${color === "bg-blue-500" && "text-white bg-blue-500 border-1 border-blue-800"}`} onClick={() => setColor("bg-blue-500")} >blue</button>
+    <button className={`rounded-sm px-1 ${color === "bg-yellow-400" && "bg-yellow-400 border-1 border-yellow-800"}`} onClick={() => setColor("bg-yellow-400")}>yellow</button>
+    <button className={`rounded-sm px-1 ${color === "bg-emerald-400" && "bg-emerald-400 border-1 border-emerald-800"}`} onClick={() => setColor("bg-emerald-400")}>emerald</button>
+    <button className={`rounded-sm px-1 ${color === "bg-black" && "text-white bg-black"}`} onClick={() => setColor("bg-black")}>black</button>
+    <button className={`rounded-sm px-1`} onClick={() => setColor("bg-red-200")}>reset</button>
+
+    <div className='flex flex-row items-center gap-1 mt-5 bg-orange-500 p-0.5 rounded-full'>
+        <button className={`rounded-full py-1 px-20 ${isDelivery ? "text-orange-500 bg-white" : "text-white bg-orange-500"}`} onClick={() => setIsDelivery(true)}>Delivery</button>
+        <button className={`rounded-full py-1 px-20 ${isDelivery ? "text-white bg-orange-500" : "text-orange-500 bg-white"}`} onClick={() => setIsDelivery(false)}>Pick Up</button>
+    </div>
     </div>
     </>
-  )
+  ) 
 }
 
 function ServiceCard(props: any) {
     console.log(props.id);
     return (
-        <div className={`flex flex-row items-start justify-start gap-4 `}>
-        {props.id === 2 && <div className='w-[2px] h-[230px] bg-blue-500'></div>}
-        <div className={`w-[300px] flex flex-col justify-center items-center gap-4 p-4  `}>
-            <h1 className={`text-lg font-bold text-[22px] ${props.warna}`}>{props.title}</h1>
-            <p className='w-full text-justify text-[20px]'>{props.description}</p>
-        </div>
-        {props.id === 2 && <div className='w-[2px] h-[230px] bg-blue-500'></div>}
-        </div>
+        <>
+            <div className={`w-72 flex flex-col justify-center items-center gap-4 p-4  `}>
+                <h1 className={`text-lg font-bold text-[22px] ${props.warna}`}>{props.title}</h1>
+                <p className='w-full text-justify text-[20px]'>{props.description}</p>
+            </div>
+            
+        </>
     )
 }
