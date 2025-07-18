@@ -72,10 +72,10 @@ export default function Service() {
             ))}
         </div>
 
-    <button onClick={() => setAktif("mobileApp")}>mobile app</button>
-    <button onClick={() => setAktif("webDev")}>web dev</button>
-    <button onClick={() => setAktif("troubleShoot")}>trouble shoot</button>
-    <button onClick={() => setAktif("")}>reset</button>
+        <button onClick={() => setAktif("mobileApp")}>mobile app</button>
+        <button onClick={() => setAktif("webDev")}>web dev</button>
+        <button onClick={() => setAktif("troubleShoot")}>trouble shoot</button>
+        <button onClick={() => setAktif("")}>reset</button>
     </div>
     </>
   )

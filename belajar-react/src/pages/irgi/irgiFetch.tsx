@@ -20,13 +20,18 @@ export default function IrgiFetch() {
         }
     }
 
+    // useEffect(() => {
+    //     dataUser.id 
+    //     if(dataUser.id === )
+    // }, []);
+
     useEffect(() => {
         fetchUser(); // Call fetchUser when the component mounts
     }, []);
 
   return (
     <>
-    <div className='flex flex-wrap gap-4'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 border p-5 justify-center'>
         {dataUser.map((user: User) => (
             <UserCard 
                 key={user.id} 

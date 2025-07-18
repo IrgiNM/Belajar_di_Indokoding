@@ -29,3 +29,9 @@ export type ProductProps = {
     warna: string;
     hover: string;
   }
+
+  export type UserIrgi = {
+    id: number;
+    username: string;
+    email: string;
+  }
