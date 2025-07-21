@@ -14,6 +14,7 @@ import IrgiPage from "./pages/IrgiPage";
 import DinarPage from "./pages/DinarPage";
 import IrgiFetch from "./pages/irgi/irgiFetch";
 import IrgiId from "./pages/irgi/IrgiId";
+import ExampleTanstackQuery from "./pages/example/ExampleTanstackQuery";
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
           <Route path="/irgiFetch" element={<IrgiFetch />} />
           <Route path="/irgiId/:id" element={<IrgiId />} />
           <Route path="/latih-kuda/:id" element={<LatihKuda />} /> 
+          <Route path="/ExampleTanstackQuery" element={<ExampleTanstackQuery />} /> 
+          
 
         </Route>
       </Routes>
